@@ -20,29 +20,19 @@ const SortableTable = ({ data }) => {
     const rankedData = [];
     const unrankedData = [];
 
-    
     filtered.forEach((college) => {
       if (college.ranking) {
-
-       
         rankedData[college.ranking - 1] = college;
       } else {
         unrankedData.push(college);
       }
     });
 
-    
-    const sorted = rankedData.concat(unrankedData);
+    const sortedRankedData = rankedData.filter(Boolean);
+    const sortedData = sortedRankedData.concat(unrankedData);
 
-  
-    const cleanedSorted = sorted.filter((college) => college !== undefined);
-
-  
     if (sortConfig !== null) {
-      const start = rankedData.length;
-      const end = sorted.length;
-
-      cleanedSorted.slice(start, end).sort((a, b) => {
+      sortedData.sort((a, b) => {
         if (a[sortConfig.key] < b[sortConfig.key]) {
           return sortConfig.direction === "ascending" ? -1 : 1;
         }
@@ -53,10 +43,8 @@ const SortableTable = ({ data }) => {
       });
     }
 
-    return cleanedSorted;
+    return sortedData;
   };
-
-    
 
   useEffect(() => {
     const filteredAndSortedData = getFilteredAndSortedData();
