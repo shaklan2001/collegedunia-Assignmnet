@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import "../src/App.css"; // Import the CSS file
+import "../src/App.css"; 
 import { FaLongArrowAltRight, FaDownload } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 
@@ -20,23 +20,24 @@ const SortableTable = ({ data }) => {
     const rankedData = [];
     const unrankedData = [];
 
-    // Split the data into ranked and unRanked colleges
+    
     filtered.forEach((college) => {
       if (college.ranking) {
-        // Push ranked college into its designated position
+
+       
         rankedData[college.ranking - 1] = college;
       } else {
         unrankedData.push(college);
       }
     });
 
-    // Merge ranked colleges with unranked colleges
+    
     const sorted = rankedData.concat(unrankedData);
 
-    // Clean up any undefined spots due to ranking gaps
+  
     const cleanedSorted = sorted.filter((college) => college !== undefined);
 
-    // If there's a sortConfig, apply sorting to the unranked part
+  
     if (sortConfig !== null) {
       const start = rankedData.length;
       const end = sorted.length;
@@ -103,7 +104,7 @@ const SortableTable = ({ data }) => {
   }, [hasMore]);
 
   const handleRowClick = (index) => {
-    setSelectedRowIndex(index === selectedRowIndex ? null : index); // Toggle selection
+    setSelectedRowIndex(index === selectedRowIndex ? null : index); 
   };
 
   return (

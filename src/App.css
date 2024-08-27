@@ -63,11 +63,11 @@ thead th {
   font-size: 14px;
   cursor: pointer;
   position: relative;
-  border-right: 1px solid #ccc; /* Vertical line between columns */
+  border-right: 1px solid #ccc; 
 }
 
 thead th:last-child {
-  border-right: none; /* Remove right border for the last column */
+  border-right: none; 
 }
 
 thead th:hover {
@@ -94,7 +94,7 @@ thead th.sort-desc::after {
 }
 
 tbody tr {
-  border-bottom: 1px solid #ccc; /* Horizontal line between rows */
+  border-bottom: 1px solid #ccc; 
 }
 
 tbody tr.featured {
@@ -109,11 +109,11 @@ tbody td {
   padding: 12px;
   font-size: 14px;
   color: #333;
-  border-right: 1px solid #ccc; /* Vertical line between columns */
+  border-right: 1px solid #ccc; 
 }
 
 tbody td:last-child {
-  border-right: none; /* Remove right border for the last column */
+  border-right: none; 
 }
 
 .college-info {
@@ -160,7 +160,7 @@ tbody td:last-child {
 }
 
 .fees-section {
-  color: #2b9348; /* Customize the color as needed */
+  color: #2b9348; 
   font-weight: bold;
   font-size: 16px;
 }
